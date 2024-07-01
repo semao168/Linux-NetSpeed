@@ -13,6 +13,11 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/semao168/Linux
 chmod +x bbr.sh
 ./bbr.sh
 ```
+sysctl net.ipv4.tcp_congestion_control
+
+如果得到如下结果则代表BBR安装成功：
+
+net.ipv4.tcp_congestion_control = bbr
 
  > 修改SSH端口
 ```
