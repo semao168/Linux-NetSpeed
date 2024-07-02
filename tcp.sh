@@ -81,7 +81,9 @@ installbbrplus(){
 #安装Lotserver内核
 installlot(){
 	if [[ "${release}" == "centos" ]]; then
-		rpm --import http://${github}/lotserver/${release}/RPM-GPG-KEY-elrepo.org
+		#rpm --import http://${github}/lotserver/${release}/RPM-GPG-KEY-elrepo.org
+		rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+    rpm -Uvh https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm
 		yum remove -y kernel-firmware
 		yum install -y http://${github}/lotserver/${release}/${version}/${bit}/kernel-firmware-${kernel_version}.rpm
 		yum install -y http://${github}/lotserver/${release}/${version}/${bit}/kernel-${kernel_version}.rpm
