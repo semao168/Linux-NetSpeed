@@ -95,6 +95,10 @@ installlot(){
 	fi
 	detele_kernel
 	BBR_grub
+	echo -e "${Info}当前所有内核！"
+	grubby --info=ALL
+		echo -e "${Info}默认启动内核！"
+	grubby --default-kernel
 	echo -e "${Tip} 重启VPS后，请重新运行脚本开启${Red_font_prefix}Lotserver${Font_color_suffix}"
 	stty erase '^H' && read -p "需要重启VPS后，才能开启Lotserver，是否现在重启 ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
