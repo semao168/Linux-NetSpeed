@@ -11,15 +11,19 @@ chmod +x tcp.sh
 yum install wget -y && wget -O sshd.sh "https://raw.githubusercontent.com/semao168/lotServer/main/sshd.sh" && chmod +x sshd.sh && ./sshd.sh
 ```
 
- > 更换仓库
+ > centos7更换仓库
 ```
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 
 curl -o /etc/yum.repos.d/CentOS-Base.repo  -L https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/CentOS-ustc.repo
 
+yum install epel-release -y
+```
 
-curl -o /etc/yum.repos.d/CentOS-Base.repo  -L https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/CentOS-aliyun.repo
+ > debian9更换仓库
+```
 
+curl -o /etc/apt/sources.list  -L https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/sources.list
 
 yum install epel-release -y
 ```
