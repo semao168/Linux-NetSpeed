@@ -23,9 +23,9 @@ yum install epel-release -y
  > debian9更换仓库
 ```
 
-curl -o /etc/apt/sources.list  -L https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/sources.list
+ wget -p /etc/apt/  https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/sources.list
 
-yum install epel-release -y
+
 ```
 
 
