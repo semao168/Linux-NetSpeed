@@ -80,7 +80,7 @@ installbbrplus(){
 
 #安装Lotserver内核
 installlot(){
-	if [[ "${release}" == "centos"]]; then
+	if [[ "${release}" == "centos" ]]; then
 		#rpm --import http://${github}/lotserver/${release}/RPM-GPG-KEY-elrepo.org
 		rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
     rpm -Uvh https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm
