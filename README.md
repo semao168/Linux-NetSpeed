@@ -18,6 +18,18 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 curl -o /etc/yum.repos.d/CentOS-Base.repo  -L https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/CentOS-ustc.repo
 
 yum install epel-release -y
+
+
+#/boot/grub/grub.conf 缺失：
+ 
+yum install -y grub
+grub-mkconfig -o /boot/grub/grub.conf
+ 
+#/boot/grub2/grub.cfg 缺失：
+ 
+yum install -y grub2
+grub2-mkconfig -o /boot/grub2/grub.cfg
+
 ```
 
  > debian9更换仓库
