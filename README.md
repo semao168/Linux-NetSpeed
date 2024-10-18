@@ -10,10 +10,14 @@ chmod +x tcp.sh
 ```
 yum install wget -y && wget -O sshd.sh "https://raw.githubusercontent.com/semao168/lotServer/main/sshd.sh" && chmod +x sshd.sh && ./sshd.sh
 ```
-
+ > centos7阿里云仓库
+```
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+```
  > centos7更换仓库
 ```
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+
 
 curl -o /etc/yum.repos.d/CentOS-Base.repo  -L https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/CentOS-ustc.repo
 
