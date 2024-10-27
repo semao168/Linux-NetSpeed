@@ -1,8 +1,8 @@
-# 一键DD Centos7 国际 默认密码：cxthhhhh.com
+# 一键DD Centos7 国际 默认密码：Pwd@CentOS
 ```
 wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh && bash AutoReinstall.sh
 ```
-# 一键DD Centos7国内可用版 默认密码：cxthhhhh.com
+# 一键DD Centos7国内可用版 默认密码：Pwd@CentOS
 ```
 bash <(wget --no-check-certificate -qO- https://cdn.jsdelivr.net/gh/hiCasper/Shell@master/AutoReinstall.sh)
 
