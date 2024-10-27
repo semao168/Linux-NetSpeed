@@ -1,3 +1,15 @@
+# 一键DD Centos7 国际
+```
+wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh && bash AutoReinstall.sh
+```
+#一键DD Centos7国内可用版
+```
+bash <(wget --no-check-certificate -qO- https://cdn.jsdelivr.net/gh/hiCasper/Shell@master/AutoReinstall.sh)
+
+```
+
+
+
 # Linux-NetSpeed
 ```
 wget -N --no-check-certificate "https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/tcp.sh"
