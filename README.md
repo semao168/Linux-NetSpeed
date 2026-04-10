@@ -30,21 +30,13 @@
 ### Debian / Ubuntu 系统
 
 ```bash
-# 安装基础组件
-apt-get install -y xz-utils openssl gawk file wget screen
-
-# 创建 screen 会话
-screen -S os
+apt-get install -y xz-utils openssl gawk file wget screen && screen -S os
 ```
 
 ### RedHat / CentOS 系统
 
 ```bash
-# 安装基础组件
-yum install -y xz openssl gawk file glibc-common wget screen
-
-# 创建 screen 会话
-screen -S os
+yum install -y xz openssl gawk file glibc-common wget screen && screen -S os
 ```
 
 ---
@@ -53,15 +45,11 @@ screen -S os
 ## 一键 DD CentOS7 国际版
 
 > 默认密码：`Pwd@CentOS`
-> 
+>
 > 此脚本用于全自动重装系统为 CentOS7 国际版
 
 ```bash
-wget --no-check-certificate -O NewReinstall.sh https://raw.githubusercontent.com/fcurrk/reinstall/master/NewReinstall.sh
-
-chmod a+x NewReinstall.sh
-
-bash NewReinstall.sh
+wget --no-check-certificate -O NewReinstall.sh https://raw.githubusercontent.com/fcurrk/reinstall/master/NewReinstall.sh && chmod a+x NewReinstall.sh && bash NewReinstall.sh
 ```
 
 ---
@@ -72,14 +60,7 @@ bash NewReinstall.sh
 > 用于优化 Linux 服务器网络性能，支持 BBR/BBRplus/LotServer 等加速方案
 
 ```bash
-# 下载脚本
-wget -N --no-check-certificate "https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/tcp.sh"
-
-# 赋予执行权限
-chmod +x tcp.sh
-
-# 运行脚本
-./tcp.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
 ```
 
 ---
@@ -90,17 +71,7 @@ chmod +x tcp.sh
 > 通过脚本快速修改 SSH 默认端口，增强服务器安全性
 
 ```bash
-# 安装 wget（如果没有）
-yum install wget -y
-
-# 下载 SSH 端口修改脚本
-wget -O sshd.sh "https://raw.githubusercontent.com/semao168/lotServer/main/sshd.sh"
-
-# 赋予执行权限
-chmod +x sshd.sh
-
-# 运行脚本
-./sshd.sh
+yum install wget -y && wget -O sshd.sh "https://raw.githubusercontent.com/semao168/lotServer/main/sshd.sh" && chmod +x sshd.sh && ./sshd.sh
 ```
 
 ---
@@ -111,10 +82,6 @@ chmod +x sshd.sh
 > 将 CentOS7 系统源更换为阿里云镜像源，提升软件包下载速度
 
 ```bash
-# 备份原有源（可选）
-# mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-
-# 下载阿里云源
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 ```
 
@@ -126,14 +93,7 @@ curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos
 > 将 CentOS7 系统源更换为中科大镜像源，并安装 EPEL 扩展源
 
 ```bash
-# 备份原有源
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-
-# 下载中科大源
-curl -o /etc/yum.repos.d/CentOS-Base.repo -L https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/CentOS-ustc.repo
-
-# 安装 EPEL 扩展源
-yum install epel-release -y
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup && curl -o /etc/yum.repos.d/CentOS-Base.repo -L https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/CentOS-ustc.repo && yum install epel-release -y
 ```
 
 ---
@@ -144,10 +104,6 @@ yum install epel-release -y
 > 将 Debian9 系统源更换为国内镜像源
 
 ```bash
-# 备份原有源
-# cp /etc/apt/sources.list /etc/apt/sources.list.backup
-
-# 下载新源
 wget -O /etc/apt/sources.list https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/sources.list --no-check-certificate
 ```
 
@@ -161,21 +117,13 @@ wget -O /etc/apt/sources.list https://raw.githubusercontent.com/semao168/Linux-N
 ### 情况一：/boot/grub/grub.conf 缺失
 
 ```bash
-# 安装 grub
-yum install -y grub
-
-# 重新生成 grub 配置文件
-grub-mkconfig -o /boot/grub/grub.conf
+yum install -y grub && grub-mkconfig -o /boot/grub/grub.conf
 ```
 
 ### 情况二：/boot/grub2/grub.cfg 缺失
 
 ```bash
-# 安装 grub2
-yum install -y grub2
-
-# 重新生成 grub 配置文件
-grub2-mkconfig -o /boot/grub2/grub.cfg
+yum install -y grub2 && grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
 ---
@@ -186,25 +134,16 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 > 安装并启用 BBR 拥塞控制算法，提升网络吞吐量
 
 ```bash
-# 下载 BBR 安装脚本
-wget -N --no-check-certificate "https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/bbr.sh"
-
-# 赋予执行权限
-chmod +x bbr.sh
-
-# 运行脚本
-./bbr.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/bbr.sh" && chmod +x bbr.sh && ./bbr.sh
 ```
 
 ### 验证 BBR 是否启用成功
 
 ```bash
-# 查看当前使用的拥塞控制算法
 sysctl net.ipv4.tcp_congestion_control
-
-# 预期返回值：
-# net.ipv4.tcp_congestion_control = bbr
 ```
+
+> 预期返回值：`net.ipv4.tcp_congestion_control = bbr`
 
 ---
 
@@ -228,11 +167,7 @@ sysctl net.ipv4.tcp_congestion_control
 > 设置 LotServer 开机自动启动
 
 ```bash
-# 将启动命令写入启动文件
-echo "/appex/bin/lotServer.sh restart" >> /etc/rc.d/rc.local
-
-# 赋予执行权限
-chmod +x /etc/rc.d/rc.local
+echo "/appex/bin/lotServer.sh restart" >> /etc/rc.d/rc.local && chmod +x /etc/rc.d/rc.local
 ```
 
 ---
