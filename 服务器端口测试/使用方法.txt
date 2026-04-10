@@ -1,0 +1,10 @@
+# 新建脚本
+vi port_in.sh
+
+# 粘贴代码，ESC :wq 保存
+
+# 加权限
+chmod +x port_in.sh
+
+# 运行
+./port_in.sh
