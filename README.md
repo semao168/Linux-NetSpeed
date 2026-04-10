@@ -27,15 +27,15 @@ chmod +x tcp.sh
 ```
 
 
- > 修改SSH端口
+# 修改SSH端口
 ```
 yum install wget -y && wget -O sshd.sh "https://raw.githubusercontent.com/semao168/lotServer/main/sshd.sh" && chmod +x sshd.sh && ./sshd.sh
 ```
- > centos7阿里云仓库
+# centos7阿里云仓库
 ```
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 ```
- > centos7更换仓库
+# centos7更换仓库
 ```
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 
@@ -45,12 +45,12 @@ curl -o /etc/yum.repos.d/CentOS-Base.repo  -L https://raw.githubusercontent.com/
 yum install epel-release -y
 
 
-#/boot/grub/grub.conf 缺失：
+/boot/grub/grub.conf 缺失：
  
 yum install -y grub
 grub-mkconfig -o /boot/grub/grub.conf
  
-#/boot/grub2/grub.cfg 缺失：
+/boot/grub2/grub.cfg 缺失：
  
 yum install -y grub2
 grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -58,7 +58,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
 
- > debian9更换仓库
+# debian9更换仓库
 ```
 
 wget -O  /etc/apt/sources.list  https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/sources.list --no-check-certificate
