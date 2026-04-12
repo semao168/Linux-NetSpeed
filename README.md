@@ -63,6 +63,42 @@ wget --no-check-certificate -O NewReinstall.sh https://raw.githubusercontent.com
 wget -N --no-check-certificate "https://raw.githubusercontent.com/semao168/Linux-NetSpeed/main/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
 ```
 
+<!-- centos7内核锁定不更新 -->
+## 内核锁定不更新
+
+> 内核锁定
+
+```bash
+yum versionlock delete kernel*
+yum versionlock delete kernel-headers*
+yum versionlock delete kernel-tools*
+
+```
+
+> 内核解锁
+
+```bash
+yum install -y yum-plugin-versionlock
+
+# 2. 查看已装内核
+rpm -q kernel
+# 示例：kernel-3.10.0-1160.el7.x86_64
+
+# 3. 锁定所有 kernel 相关包
+yum versionlock add kernel*
+yum versionlock add kernel-headers*
+yum versionlock add kernel-tools*
+
+# 查看锁定列表
+yum versionlock list
+
+# 以后正常更新
+yum update -y
+
+```
+
+
+
 ---
 
 <!-- 修改 SSH 端口 -->
